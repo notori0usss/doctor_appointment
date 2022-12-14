@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:doctor_appointment/utils/config.dart';
 import 'package:flutter/material.dart';
 
 class MainLayout extends StatefulWidget {
@@ -11,7 +11,8 @@ class MainLayout extends StatefulWidget {
 class _MainLayoutState extends State<MainLayout> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
+      backgroundColor: Config.backgroundColor,
       body: Center(
         child: Text("MainLayout"),
       ),

@@ -1,4 +1,6 @@
+import 'package:doctor_appointment/components/button.dart';
 import 'package:doctor_appointment/components/login_form.dart';
+import 'package:doctor_appointment/components/social_button.dart';
 import 'package:doctor_appointment/utils/text.dart';
 import 'package:flutter/material.dart';
 
@@ -15,6 +17,7 @@ class _AuthPageState extends State<AuthPage> {
   @override
   Widget build(BuildContext context) {
     Config().init(context);
+
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
@@ -38,7 +41,7 @@ class _AuthPageState extends State<AuthPage> {
                 ),
               ),
               Config.spaceSmall,
-              LoginForm(),
+              const LoginForm(),
               Config.spaceSmall,
               Center(
                 child: TextButton(
@@ -52,6 +55,25 @@ class _AuthPageState extends State<AuthPage> {
                     ),
                   ),
                 ),
+              ),
+              const Spacer(),
+              Center(
+                child: Text(
+                  AppText.enText['social_login']!,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.grey.shade500,
+                  ),
+                ),
+              ),
+              Config.spaceSmall,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: const <Widget>[
+                  SocialButton(social: 'facebook'),
+                  SocialButton(social: 'google'),
+                ],
               )
             ],
           ),
